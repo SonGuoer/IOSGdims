@@ -1,0 +1,6 @@
+framework module Pods_IOSGdims {
+  umbrella header "Pods-IOSGdims-umbrella.h"
+
+  export *
+  module * { export * }
+}
