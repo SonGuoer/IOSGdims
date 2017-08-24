@@ -4,6 +4,7 @@ use_frameworks!
 target ‘IOSGdims’ do
         pod ‘HandyJSON’,’~>1.7.2’
         pod 'SwiftyJSON'
+	pod 'Alamofire'
 end
 
 post_install do |installer|

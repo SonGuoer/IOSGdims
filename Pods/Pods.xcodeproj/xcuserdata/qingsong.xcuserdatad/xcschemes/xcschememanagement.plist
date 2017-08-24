@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>HandyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,12 +32,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>875254683052096CEF19716561403102</key>
+		<key>60C2BAEBA2C62254136123717DCE67A3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>885FCE7AACC9120A6B3662758784BC33</key>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B6AF313812E8B179F50CFC70C80E24FE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
