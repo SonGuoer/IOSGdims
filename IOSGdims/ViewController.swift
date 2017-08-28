@@ -7,14 +7,14 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.view.backgroundColor = UIColor.white
-        self.view.backgroundColor = UIColor.blue
+        
     }
 
     override func didReceiveMemoryWarning() {
