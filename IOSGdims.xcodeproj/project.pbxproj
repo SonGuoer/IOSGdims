@@ -13,6 +13,7 @@
 		683816071F4ED9E800F550F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 683816051F4ED9E800F550F8 /* Main.storyboard */; };
 		683816091F4ED9E800F550F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 683816081F4ED9E800F550F8 /* Assets.xcassets */; };
 		6838160C1F4ED9E800F550F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6838160A1F4ED9E800F550F8 /* LaunchScreen.storyboard */; };
+		6889EF0D1F53FAE50039715E /* LoginHandyJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6889EF0C1F53FAE50039715E /* LoginHandyJson.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		683816081F4ED9E800F550F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6838160B1F4ED9E800F550F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6838160D1F4ED9E800F550F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6889EF0C1F53FAE50039715E /* LoginHandyJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginHandyJson.swift; sourceTree = "<group>"; };
 		73C7A4EBE2D3F082CB2E5645 /* Pods-IOSGdims.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSGdims.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOSGdims/Pods-IOSGdims.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +78,7 @@
 				683816081F4ED9E800F550F8 /* Assets.xcassets */,
 				6838160A1F4ED9E800F550F8 /* LaunchScreen.storyboard */,
 				6838160D1F4ED9E800F550F8 /* Info.plist */,
+				6889EF0C1F53FAE50039715E /* LoginHandyJson.swift */,
 			);
 			path = IOSGdims;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			files = (
 				683816041F4ED9E800F550F8 /* ViewController.swift in Sources */,
 				683816021F4ED9E800F550F8 /* AppDelegate.swift in Sources */,
+				6889EF0D1F53FAE50039715E /* LoginHandyJson.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +390,7 @@
 				683816121F4ED9E800F550F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
