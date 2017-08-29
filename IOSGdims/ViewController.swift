@@ -12,8 +12,6 @@ import HandyJSON
 import SwiftyJSON
 class ViewController: UIViewController {
 
-    @IBOutlet weak var text: UITextField!
-    @IBOutlet weak var btn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
