@@ -11,16 +11,30 @@ import Alamofire
 import HandyJSON
 import SwiftyJSON
 class ViewController: UIViewController {
-    
+
+    @IBOutlet weak var mobileText: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
     }
 
+    @IBAction func mobileTextChange(_ sender: Any) {
+        if (self.mobileText.text?.characters.count)! >= 11{
+            print("长度大于11了'")
+            mobileText.isEnabled = false
+            return
+        }
+        
+    }
     @IBAction func touchupInsidePostRequestBtnAction(_ sender: AnyObject) {
+        
+       loginPost(phone:"15702323457" , imei:"0")
+    }
+
+    func loginPost(phone:String,imei:String)  {
         let parameters = [
-            "mobile": "15702323457",
-            "imei": "0"
+            "mobile": phone,
+            "imei":imei
             ] as [String : Any]
         Alamofire.request("http://183.230.108.112:8099/meteor/findMacro.do",method:.post, parameters: parameters)
             .responseJSON { response in
@@ -31,7 +45,7 @@ class ViewController: UIViewController {
                 switch response.result {
                 case .success:
                     if let values = response.result.value {
-                    let json = JSON(values)
+                        let json = JSON(values)
                         let info = json["info"].string!
                         let code = json["code"].string!
                         let result = json["result"].string!
@@ -56,10 +70,8 @@ class ViewController: UIViewController {
                 
         }
         
-        
-        
-    }
 
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

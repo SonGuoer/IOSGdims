@@ -48,6 +48,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="请输入登录号码"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="mobileTextChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="MBb-uS-dUn"/>
+                                </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eKL-lO-Kor">
                                 <rect key="frame" x="36" y="335" width="250" height="29"/>
@@ -90,7 +93,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="touchupInsidePostRequestBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uwQ-hk-bQh"/>
+                                    <action selector="touchupInsidePostRequestBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o29-uK-c9U"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -128,15 +131,12 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
-                        <outlet property="loginBtn" destination="BcK-tZ-sDQ" id="UYD-2x-V2A"/>
-                        <outlet property="mobileBtn" destination="nSx-ct-23f" id="6hm-Mw-kMk"/>
-                        <outlet property="mobileText" destination="nSx-ct-23f" id="ZNe-Qh-Psl"/>
-                        <outlet property="selectorBtn" destination="eKL-lO-Kor" id="ryE-rp-s62"/>
+                        <outlet property="mobileText" destination="nSx-ct-23f" id="Wtp-d9-SYy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3486" y="-2036"/>
+            <point key="canvasLocation" x="-3128" y="-3610"/>
         </scene>
     </scenes>
     <resources>
