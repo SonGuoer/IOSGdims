@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import HandyJSON
 import SwiftyJSON
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var mobileText: UITextField!
     override func viewDidLoad() {
@@ -67,7 +67,7 @@ class ViewController: UIViewController {
                 case .failure(let error):
                     print(error)
                 }
-                
+        
         }
         
 
@@ -77,6 +77,20 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    /*
+     回收系统键盘
+     */
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    /*
+     点击空白处收起keyboard
+     */
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        phoneNumText.resignFirstResponder()
+    }
+    
 }
 
