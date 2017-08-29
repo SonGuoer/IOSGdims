@@ -18,14 +18,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var phoneNumText: UITextField!
     @IBOutlet weak var personType: UISegmentedControl!
     @IBOutlet weak var loginBtn: UIButton!
-    var ips = ""
-    var ports = ""
+    var ips = "192.168.1.1"
+    var ports = "8080"
+    var phoneNum = "110"
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ipText.delegate = self
         portText.delegate = self
+        if ((UserDefaults.standard.value(forKey: "isSave") as! String!) != nil) {
+            self.phoneNumText.text = UserDefaults.standard.value(forKey: "phoneNum") as! String!
+            self.ipText.text = UserDefaults.standard.value(forKey: "ips") as! String!
+            self.portText.text = UserDefaults.standard.value(forKey: "ports") as! String!
+         }
+     
         
     }
     @IBAction func phoneNumChange(_ sender: Any) {
@@ -38,9 +46,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //获取人员类型的值
         let typeNumber = String(personType.selectedSegmentIndex)
         /*获取输入框文本*/
-        let phoneNum = phoneNumText.text!
+         phoneNum = phoneNumText.text!
          ips = ipText.text!
          ports = portText.text!
+        //设置存储信息
+        UserDefaults.standard.set(phoneNum, forKey: "phoneNum")
+        UserDefaults.standard.set(ips, forKey: "ips")
+        UserDefaults.standard.set(ports, forKey: "ports")
+        UserDefaults.standard.set(typeNumber, forKey: "typeNumber")
+        UserDefaults.standard.set("true", forKey: "isSave")
+        //设置同步
+        UserDefaults.standard.synchronize()
         if phoneNum.isEmpty {
             Drop.down("号码不能为空")
         }else if ips.isEmpty {
@@ -55,6 +71,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
       
     }
     func loginPost(phone:String,imei:String)  {
+   
+        
+
         /*需要上传的参数集合*/
         let parameters = [
             "mobile": phone,
