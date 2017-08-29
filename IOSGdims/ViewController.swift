@@ -11,9 +11,6 @@ import Alamofire
 import HandyJSON
 import SwiftyJSON
 class ViewController: UIViewController, UITextFieldDelegate {
-
-    @IBOutlet weak var text: UITextField!
-    @IBOutlet weak var btn: UIButton!
     
     @IBOutlet weak var ipText: UITextField!
     @IBOutlet weak var portText: UITextField!
