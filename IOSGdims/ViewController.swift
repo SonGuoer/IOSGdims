@@ -11,13 +11,12 @@ import Alamofire
 import HandyJSON
 import SwiftyJSON
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
-   
-    
+
     @IBAction func touchupInsidePostRequestBtnAction(_ sender: AnyObject) {
         let parameters = [
             "mobile": "15702323457",
