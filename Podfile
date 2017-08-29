@@ -5,6 +5,7 @@ target ‘IOSGdims’ do
         pod ‘HandyJSON’,’~>1.7.2’
         pod 'SwiftyJSON'
 	pod 'Alamofire'
+        pod 'SwiftyDrop', '~>3.0'
 end
 
 post_install do |installer|

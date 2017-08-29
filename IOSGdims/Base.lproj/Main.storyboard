@@ -49,7 +49,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="请输入登录号码"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="mobileTextChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="MBb-uS-dUn"/>
+                                    <action selector="phoneNumChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="It6-nB-Vz3"/>
                                 </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eKL-lO-Kor">
@@ -131,12 +131,16 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
-                        <outlet property="mobileText" destination="nSx-ct-23f" id="Wtp-d9-SYy"/>
+                        <outlet property="ipText" destination="D8b-5O-Oz2" id="Eix-qs-hdG"/>
+                        <outlet property="loginBtn" destination="BcK-tZ-sDQ" id="pA5-3F-K3i"/>
+                        <outlet property="personType" destination="eKL-lO-Kor" id="1vg-V8-nDx"/>
+                        <outlet property="phoneNumText" destination="nSx-ct-23f" id="08j-48-Toa"/>
+                        <outlet property="portText" destination="oqt-gT-WGy" id="iIP-f8-xIW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3128" y="-3610"/>
+            <point key="canvasLocation" x="-3197" y="-4114"/>
         </scene>
     </scenes>
     <resources>

@@ -10,59 +10,83 @@ import UIKit
 import Alamofire
 import HandyJSON
 import SwiftyJSON
+import SwiftyDrop
 class ViewController: UIViewController, UITextFieldDelegate {
-
-    @IBOutlet weak var mobileText: UITextField!
+    
+    @IBOutlet weak var ipText: UITextField!
+    @IBOutlet weak var portText: UITextField!
+    @IBOutlet weak var phoneNumText: UITextField!
+    @IBOutlet weak var personType: UISegmentedControl!
+    @IBOutlet weak var loginBtn: UIButton!
+    var ips = ""
+    var ports = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        ipText.delegate = self
+        portText.delegate = self
+        
     }
-
-    @IBAction func mobileTextChange(_ sender: Any) {
-        if (self.mobileText.text?.characters.count)! >= 11{
-            print("长度大于11了'")
-            mobileText.isEnabled = false
-            return
+    @IBAction func phoneNumChange(_ sender: Any) {
+        
+        if (self.phoneNumText.text?.characters.count)!>11{
+            Drop.down("号码不能超过11位")
+        }
+    }
+    @IBAction func touchupInsidePostRequestBtnAction(_ sender: Any) {
+        //获取人员类型的值
+        let typeNumber = String(personType.selectedSegmentIndex)
+        /*获取输入框文本*/
+        let phoneNum = phoneNumText.text!
+         ips = ipText.text!
+         ports = portText.text!
+        if phoneNum.isEmpty {
+            Drop.down("号码不能为空")
+        }else if ips.isEmpty {
+             Drop.down("ip不能为空")
+        }else if ports.isEmpty {
+            Drop.down("端口不能为空")
+        }else{
+            //启动网络请求
+           loginPost(phone: phoneNum , imei: typeNumber)
         }
         
+      
     }
-    @IBAction func touchupInsidePostRequestBtnAction(_ sender: AnyObject) {
-        
-       loginPost(phone:"15702323457" , imei:"0")
-    }
-
     func loginPost(phone:String,imei:String)  {
+        /*需要上传的参数集合*/
         let parameters = [
             "mobile": phone,
             "imei":imei
             ] as [String : Any]
-        Alamofire.request("http://183.230.108.112:8099/meteor/findMacro.do",method:.post, parameters: parameters)
+        /*上传的Alamofire方法*/
+        Alamofire.request("http://"+ips+":"+ports+"/meteor/findMacro.do",method:.post, parameters: parameters)
             .responseJSON { response in
-                print("original URL request: \(String(describing: response.request))")  // original URL request
-                print("URL response: \(String(describing: response.response))") // URL response
-                print("server data: \(String(describing: response.data))")     // server data
-                print("result of response serialization: \(response.result)")   // result of response serialization
+//                print("original URL request: \(String(describing: response.request))")  // original URL request
+//                print("URL response: \(String(describing: response.response))") // URL response
+//                print("server data: \(String(describing: response.data))")     // server data
+//                print("result of response serialization: \(response.result)")   // result of response serialization
                 switch response.result {
                 case .success:
                     if let values = response.result.value {
                         let json = JSON(values)
                         let info = json["info"].string!
-                        let code = json["code"].string!
+//                        let code = json["code"].string!
                         let result = json["result"].string!
-                        
-                        if let jsonData = info.data(using: String.Encoding.utf8, allowLossyConversion: false) {
-                            let json = JSON(data: jsonData)
-                            if let number = json[0]["name"].string {
-                                // 找到电话号码
-                                print("第一个联系人的第一个电话号码：",number)
+                        if result == "1" {
+                            
+                            if info == "[]"{
+                                Drop.down("没有查到该号码对应的群测群防人员", state: .error)
+                            }else{
+                           
+                                Drop.down("登录成功", state: .success)
                             }
-                            if let maros = json[1]["name"].string{
-                                print("maros数据：",maros)
-                            }
+                        }else{
+                           Drop.down(info, state: .error)
                         }
-                        
-                        print("info:"+info+"code"+code+"result"+result)
-                        
+//                        if let jsonData = info.data(using: String.Encoding.utf8, allowLossyConversion: false) {
+   
                     }
                 case .failure(let error):
                     print(error)
