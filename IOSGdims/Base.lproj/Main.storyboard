@@ -35,7 +35,7 @@
                                 <rect key="frame" x="71" y="120" width="270" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="请输入IP地址"/>
                                 </userDefinedRuntimeAttributes>
@@ -63,7 +63,7 @@
                                 <rect key="frame" x="71" y="188" width="270" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="请输入端口号"/>
                                 </userDefinedRuntimeAttributes>
@@ -86,6 +86,9 @@
                                         <color key="value" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="touchupInsidePostRequestBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3gi-L8-ovw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -121,6 +124,12 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="ipText" destination="D8b-5O-Oz2" id="w8o-g2-7Ix"/>
+                        <outlet property="personType" destination="eKL-lO-Kor" id="HYd-JH-BU0"/>
+                        <outlet property="phoneNumText" destination="nSx-ct-23f" id="wjl-VO-M5e"/>
+                        <outlet property="portText" destination="oqt-gT-WGy" id="pyP-ue-S9c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
