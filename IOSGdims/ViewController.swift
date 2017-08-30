@@ -21,19 +21,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var ips = "192.168.1.1"
     var ports = "8080"
     var phoneNum = "110"
-    
+    var activityIndicator:UIActivityIndicatorView!
+    var sessionManager:SessionManager?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ipText.delegate = self
         portText.delegate = self
+        
         if ((UserDefaults.standard.value(forKey: "isSave") as! String!) != nil) {
             self.phoneNumText.text = UserDefaults.standard.value(forKey: "phoneNum") as! String!
             self.ipText.text = UserDefaults.standard.value(forKey: "ips") as! String!
             self.portText.text = UserDefaults.standard.value(forKey: "ports") as! String!
          }
-     
+ 
         
     }
     @IBAction func phoneNumChange(_ sender: Any) {
@@ -58,11 +60,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //设置同步
         UserDefaults.standard.synchronize()
         if phoneNum.isEmpty {
-            Drop.down("号码不能为空")
+            Drop.down("号码不能为空" ,state:.error)
         }else if ips.isEmpty {
-             Drop.down("ip不能为空")
+             Drop.down("ip不能为空",state:.error)
         }else if ports.isEmpty {
-            Drop.down("端口不能为空")
+            Drop.down("端口不能为空",state:.error)
         }else{
             //启动网络请求
            loginPost(phone: phoneNum , imei: typeNumber)
@@ -71,16 +73,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
       
     }
     func loginPost(phone:String,imei:String)  {
-   
-        
-
+        let url=Api.init().getLoginUrl()
+        Drop.down("正在登录请稍后" ,duration:15.0)
+        self.view.isUserInteractionEnabled = false
         /*需要上传的参数集合*/
         let parameters = [
             "mobile": phone,
             "imei":imei
             ] as [String : Any]
+        let configuration = URLSessionConfiguration.default
+        configuration.timeoutIntervalForRequest = 15
+        
+        sessionManager = Alamofire.SessionManager(configuration: configuration)
         /*上传的Alamofire方法*/
-        Alamofire.request("http://"+ips+":"+ports+"/meteor/findMacro.do",method:.post, parameters: parameters)
+        sessionManager?.request(url,method:.post, parameters: parameters)
             .responseJSON { response in
 //                print("original URL request: \(String(describing: response.request))")  // original URL request
 //                print("URL response: \(String(describing: response.response))") // URL response
@@ -105,10 +111,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
                            Drop.down(info, state: .error)
                         }
 //                        if let jsonData = info.data(using: String.Encoding.utf8, allowLossyConversion: false) {
-   
+                      self.view.isUserInteractionEnabled = true
                     }
                 case .failure(let error):
                     print(error)
+                     Drop.down("登录失败,请检查登录信息", state: .error)
+                    self.view.isUserInteractionEnabled = true
                 }
         
         }
@@ -119,8 +127,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    /*
+      /*
      回收系统键盘
      */
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
