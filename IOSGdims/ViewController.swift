@@ -29,6 +29,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //加油
         ipText.delegate = self
         portText.delegate = self
         
