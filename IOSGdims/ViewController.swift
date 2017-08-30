@@ -25,8 +25,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var sessionManager:SessionManager?
     var userDefault = UserDefaultUtils()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         //加油
@@ -37,7 +35,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.phoneNumText.text = userDefault.getUser(forKey: "phoneNum")
             self.ipText.text = userDefault.getUser(forKey: "ips")
             self.portText.text = userDefault.getUser(forKey: "ports")
-         }
+        }else{
+           print("不为空")
+        }
  
         
     }

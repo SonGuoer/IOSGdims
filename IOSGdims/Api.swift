@@ -11,9 +11,10 @@ import Foundation
 class Api{
     var ip = ""
     var port = ""
+    var userDefault = UserDefaultUtils()
     init() {
-        self.ip = UserDefaults.standard.value(forKey: "ips") as! String!
-        self.port = UserDefaults.standard.value(forKey: "ports") as! String!
+        self.ip = userDefault.getUser(forKey: "ips")!
+        self.port = userDefault.getUser(forKey: "ports")!
     }
     
     func getLoginUrl() -> String{
