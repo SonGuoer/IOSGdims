@@ -14,6 +14,8 @@
 		683816091F4ED9E800F550F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 683816081F4ED9E800F550F8 /* Assets.xcassets */; };
 		6838160C1F4ED9E800F550F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6838160A1F4ED9E800F550F8 /* LaunchScreen.storyboard */; };
 		6889EF0D1F53FAE50039715E /* LoginHandyJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6889EF0C1F53FAE50039715E /* LoginHandyJson.swift */; };
+		A0C350D31F56631400B9951D /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C350D21F56631400B9951D /* HomepageViewController.swift */; };
+		A0C350D51F56661E00B9951D /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C350D41F56661E00B9951D /* CellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		6838160D1F4ED9E800F550F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6889EF0C1F53FAE50039715E /* LoginHandyJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginHandyJson.swift; sourceTree = "<group>"; };
 		73C7A4EBE2D3F082CB2E5645 /* Pods-IOSGdims.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSGdims.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOSGdims/Pods-IOSGdims.release.xcconfig"; sourceTree = "<group>"; };
+		A0C350D21F56631400B9951D /* HomepageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
+		A0C350D41F56661E00B9951D /* CellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 				6838160A1F4ED9E800F550F8 /* LaunchScreen.storyboard */,
 				6838160D1F4ED9E800F550F8 /* Info.plist */,
 				6889EF0C1F53FAE50039715E /* LoginHandyJson.swift */,
+				A0C350D21F56631400B9951D /* HomepageViewController.swift */,
+				A0C350D41F56661E00B9951D /* CellModel.swift */,
 			);
 			path = IOSGdims;
 			sourceTree = "<group>";
@@ -224,8 +230,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0C350D31F56631400B9951D /* HomepageViewController.swift in Sources */,
 				683816041F4ED9E800F550F8 /* ViewController.swift in Sources */,
 				683816021F4ED9E800F550F8 /* AppDelegate.swift in Sources */,
+				A0C350D51F56661E00B9951D /* CellModel.swift in Sources */,
 				6889EF0D1F53FAE50039715E /* LoginHandyJson.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
