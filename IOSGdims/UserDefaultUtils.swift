@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 class UserDefaultUtils{
     let useDefault = UserDefaults.standard
     init() {
@@ -24,14 +25,14 @@ class UserDefaultUtils{
         useDefault.synchronize()
     }
     /*数组读取*/
-    func getUserAry(forKey:String) ->Array<String>{
-        let text = useDefault.object(forKey: "String") as! [String]
+    func getUserAry(forKey:String) ->Array<String>?{
+        let text:Array<String>? = useDefault.object(forKey: "String") as? [String]
         return text
     }
     /*String 读取*/
-    func getUser(forKey:String) ->String{
-        let text = useDefault.value(forKey: forKey) as! String!
-        return text!
+    func getUser(forKey:String) ->String?{
+        let s:String?=useDefault.value(forKey: forKey) as? String
+        return s
     }
     /*删除*/
     func removeUser(forKey:String){
