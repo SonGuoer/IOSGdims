@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		53819A3165A7A9BC2C6DC247 /* Pods_IOSGdims.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630A3D5133D8DE6D9AD9BE01 /* Pods_IOSGdims.framework */; };
+		681CE8681F5650CD00CF20B2 /* UserDefaultUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681CE8671F5650CD00CF20B2 /* UserDefaultUtils.swift */; };
 		683816021F4ED9E800F550F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683816011F4ED9E800F550F8 /* AppDelegate.swift */; };
 		683816041F4ED9E800F550F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683816031F4ED9E800F550F8 /* ViewController.swift */; };
 		683816071F4ED9E800F550F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 683816051F4ED9E800F550F8 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		08266784D9EB18FCA51F3750 /* Pods-IOSGdims.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSGdims.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOSGdims/Pods-IOSGdims.debug.xcconfig"; sourceTree = "<group>"; };
 		630A3D5133D8DE6D9AD9BE01 /* Pods_IOSGdims.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSGdims.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		681CE8671F5650CD00CF20B2 /* UserDefaultUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultUtils.swift; sourceTree = "<group>"; };
 		683815FE1F4ED9E800F550F8 /* IOSGdims.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSGdims.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		683816011F4ED9E800F550F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		683816031F4ED9E800F550F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,6 +31,7 @@
 		6838160B1F4ED9E800F550F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6838160D1F4ED9E800F550F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6889EF0C1F53FAE50039715E /* LoginHandyJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginHandyJson.swift; sourceTree = "<group>"; };
+		689A44401F555540001B30E7 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		73C7A4EBE2D3F082CB2E5645 /* Pods-IOSGdims.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSGdims.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOSGdims/Pods-IOSGdims.release.xcconfig"; sourceTree = "<group>"; };
 		A0C350D21F56631400B9951D /* HomepageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		A0C350D41F56661E00B9951D /* CellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 		683816001F4ED9E800F550F8 /* IOSGdims */ = {
 			isa = PBXGroup;
 			children = (
+				689A44421F5560F4001B30E7 /* utils */,
 				683816011F4ED9E800F550F8 /* AppDelegate.swift */,
 				683816031F4ED9E800F550F8 /* ViewController.swift */,
 				683816051F4ED9E800F550F8 /* Main.storyboard */,
@@ -87,6 +91,15 @@
 				A0C350D41F56661E00B9951D /* CellModel.swift */,
 			);
 			path = IOSGdims;
+			sourceTree = "<group>";
+		};
+		689A44421F5560F4001B30E7 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				689A44401F555540001B30E7 /* Api.swift */,
+				681CE8671F5650CD00CF20B2 /* UserDefaultUtils.swift */,
+			);
+			name = utils;
 			sourceTree = "<group>";
 		};
 		79D0AF942C267698DC8EF014 /* Frameworks */ = {
@@ -192,12 +205,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-IOSGdims/Pods-IOSGdims-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyDrop/SwiftyDrop.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyDrop.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +378,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nandi.IOSGdims;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "/Users/qingsong/xcode/IOSGdims/Pods/**";
 			};
 			name = Debug;
 		};
@@ -376,6 +392,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nandi.IOSGdims;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "/Users/qingsong/xcode/IOSGdims/Pods/**";
 			};
 			name = Release;
 		};
