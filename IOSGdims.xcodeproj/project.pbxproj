@@ -82,6 +82,7 @@
 		683816001F4ED9E800F550F8 /* IOSGdims */ = {
 			isa = PBXGroup;
 			children = (
+				A0DEF7C01F5CE2C100011FEC /* view */,
 				689A44421F5560F4001B30E7 /* utils */,
 				683816011F4ED9E800F550F8 /* AppDelegate.swift */,
 				683816031F4ED9E800F550F8 /* ViewController.swift */,
@@ -90,9 +91,6 @@
 				6838160A1F4ED9E800F550F8 /* LaunchScreen.storyboard */,
 				6838160D1F4ED9E800F550F8 /* Info.plist */,
 				6889EF0C1F53FAE50039715E /* LoginHandyJson.swift */,
-				A0C350D21F56631400B9951D /* HomepageViewController.swift */,
-				A0C350D41F56661E00B9951D /* CellModel.swift */,
-				A0214DF51F5947DF00DA914A /* DailyReportViewController.swift */,
 			);
 			path = IOSGdims;
 			sourceTree = "<group>";
@@ -100,6 +98,7 @@
 		689A44421F5560F4001B30E7 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				A0C350D41F56661E00B9951D /* CellModel.swift */,
 				A0C350DA1F566F3F00B9951D /* UserDefaultUtils.swift */,
 				A0C350D81F566F1500B9951D /* Api.swift */,
 			);
@@ -112,6 +111,15 @@
 				630A3D5133D8DE6D9AD9BE01 /* Pods_IOSGdims.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A0DEF7C01F5CE2C100011FEC /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A0214DF51F5947DF00DA914A /* DailyReportViewController.swift */,
+				A0C350D21F56631400B9951D /* HomepageViewController.swift */,
+			);
+			name = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
