@@ -24,8 +24,9 @@ class DailyReportViewController: UIViewController {
     @IBOutlet weak var logContent: UITextView!
     /*备注*/
     @IBOutlet weak var remarks: UITextView!
-    
+    /*网络请求管理器*/
     var sessionManager:SessionManager?
+    /*share*/
     var userDefault = UserDefaultUtils()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,7 @@ class DailyReportViewController: UIViewController {
         let phoneNum = userDefault.getUser(forKey: "phoneNum")!
         if isText() {
             logPost(url:url,phoneNum:phoneNum)
+            //禁用页面
             self.view.isUserInteractionEnabled = false
         }
         
