@@ -84,6 +84,9 @@ class HomepageViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     }
     
+    /*
+     选择cell
+     */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if "1" == typeNum && "1" == cells[indexPath.row].id {
@@ -92,7 +95,11 @@ class HomepageViewController: UIViewController, UITableViewDataSource, UITableVi
             let vc = sb.instantiateViewController(withIdentifier: "DailyReportViewController") as! DailyReportViewController
             self.present(vc, animated: true, completion: nil)
         }
-        
+        else if "3" == typeNum && "1" == cells[indexPath.row].id {
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "WeeklyViewController") as! WeeklyViewController
+            self.present(vc, animated: true, completion: nil)
+        }
         
         
     }
