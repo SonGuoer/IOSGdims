@@ -30,8 +30,8 @@ class DailyReportViewController: UIViewController {
     var userDefault = UserDefaultUtils()
     override func viewDidLoad() {
         super.viewDidLoad()
-        time.text = getTimes()
-        // Do any additional setup after loading the view.
+
+        
     }
 
 
