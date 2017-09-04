@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -312,6 +312,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveDate:" destination="Os3-bc-hhk" eventType="touchUpInside" id="O73-tV-GPP"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VWq-rm-20j">
                                 <rect key="frame" x="98" y="405" width="261" height="90.5"/>
@@ -336,6 +339,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logReport:" destination="Os3-bc-hhk" eventType="touchUpInside" id="Ny6-yI-C4r"/>
+                                </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ua7-hf-K90">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -405,10 +411,18 @@
                             <constraint firstItem="hC2-y6-j4d" firstAttribute="baseline" secondItem="Wcs-eG-Qrb" secondAttribute="baseline" id="xrW-U9-tJy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="logContent" destination="s1Q-ah-duT" id="Pht-iB-ont"/>
+                        <outlet property="postSituation" destination="R8h-EH-f8a" id="Qu4-kR-W6e"/>
+                        <outlet property="recordClerk" destination="Yhr-fO-8j9" id="UxP-sM-bxq"/>
+                        <outlet property="remarks" destination="VWq-rm-20j" id="1VP-zW-Rxe"/>
+                        <outlet property="time" destination="cy6-oK-5Xg" id="9Hy-ng-9rV"/>
+                        <outlet property="workType" destination="6WT-G2-Q2A" id="twT-8H-F34"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wtR-3S-EXI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1605.5999999999999" y="-2257.4212893553226"/>
+            <point key="canvasLocation" x="1436" y="-2269"/>
         </scene>
         <!--Weekly View Controller-->
         <scene sceneID="t3S-Pc-nVW">
