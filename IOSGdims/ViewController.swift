@@ -103,7 +103,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                                 Drop.down("没有查到该号码对应的群测群防人员", state: .error)
                             }
                             else{
-                                Drop.down("登录成功", state: .success)
+                                Drop.down("登录成功", state: .success,duration:1.0)
                                 //跳转页面
                                 let sb = UIStoryboard(name: "Main", bundle: nil)
                                 let vc = sb.instantiateViewController(withIdentifier: "HomepageViewController") as! HomepageViewController

@@ -13,6 +13,7 @@
 		683816071F4ED9E800F550F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 683816051F4ED9E800F550F8 /* Main.storyboard */; };
 		683816091F4ED9E800F550F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 683816081F4ED9E800F550F8 /* Assets.xcassets */; };
 		6838160C1F4ED9E800F550F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6838160A1F4ED9E800F550F8 /* LaunchScreen.storyboard */; };
+		6871FA0B1F5D04BD00513EDB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6871FA091F5D042900513EDB /* CoreData.framework */; };
 		6889EF0D1F53FAE50039715E /* LoginHandyJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6889EF0C1F53FAE50039715E /* LoginHandyJson.swift */; };
 		A0214DF61F5947DF00DA914A /* DailyReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0214DF51F5947DF00DA914A /* DailyReportViewController.swift */; };
 		A0C350D31F56631400B9951D /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C350D21F56631400B9951D /* HomepageViewController.swift */; };
@@ -31,6 +32,7 @@
 		683816081F4ED9E800F550F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6838160B1F4ED9E800F550F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6838160D1F4ED9E800F550F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6871FA091F5D042900513EDB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6889EF0C1F53FAE50039715E /* LoginHandyJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginHandyJson.swift; sourceTree = "<group>"; };
 		73C7A4EBE2D3F082CB2E5645 /* Pods-IOSGdims.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSGdims.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOSGdims/Pods-IOSGdims.release.xcconfig"; sourceTree = "<group>"; };
 		A0214DF51F5947DF00DA914A /* DailyReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyReportViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6871FA0B1F5D04BD00513EDB /* CoreData.framework in Frameworks */,
 				53819A3165A7A9BC2C6DC247 /* Pods_IOSGdims.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,6 +111,7 @@
 		79D0AF942C267698DC8EF014 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6871FA091F5D042900513EDB /* CoreData.framework */,
 				630A3D5133D8DE6D9AD9BE01 /* Pods_IOSGdims.framework */,
 			);
 			name = Frameworks;
