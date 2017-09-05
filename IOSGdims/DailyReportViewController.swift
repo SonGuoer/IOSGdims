@@ -11,7 +11,7 @@ import SwiftyDrop
 import SwiftyJSON
 import Alamofire
 
-class DailyReportViewController: UIViewController {
+class DailyReportViewController: UIViewController, UITextFieldDelegate  {
     /*记录时间*/
     @IBOutlet weak var time: UILabel!
     /*记录人员*/
@@ -28,10 +28,14 @@ class DailyReportViewController: UIViewController {
     var sessionManager:SessionManager?
     /*share*/
     var userDefault = UserDefaultUtils()
+    var getTime = GetTimeUtils()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        recordClerk.delegate = self
+        workType.delegate = self
+        postSituation.delegate = self
+        time.text = getTime.getTimes()
     }
 
 
@@ -39,20 +43,6 @@ class DailyReportViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    /*获取时间*/
-    func getTimes() -> String  {
-        
-        let date = NSDate()
-        
-        let timeFormatter = DateFormatter()
-        
-        timeFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        
-        let strNowTime = timeFormatter.string(from: date as Date) as String
-        
-        return strNowTime;
-    }
-    
 
     @IBAction func logReport(_ sender: Any) {
          let url=Api.init().postReportUrl()
@@ -99,6 +89,11 @@ class DailyReportViewController: UIViewController {
         return true
     }
     
+  
+    @IBAction func goBack(_ sender: Any) {
+         self.dismiss(animated: true, completion: nil)
+        
+    }
     func logPost(url:String,phoneNum:String)  {
        
         Drop.down("正在登录请稍后" ,duration:15.0)
@@ -142,5 +137,25 @@ class DailyReportViewController: UIViewController {
         }
         
     }
+    
+    /*
+     回收系统键盘
+     */
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    /*
+     点击空白处收起keyboard
+     */
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        recordClerk.resignFirstResponder()
+         workType.resignFirstResponder()
+         logContent.resignFirstResponder()
+         remarks.resignFirstResponder()
+         postSituation.resignFirstResponder()
+    }
+    
 
 }

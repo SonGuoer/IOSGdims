@@ -27,5 +27,17 @@ class Api{
         let url = "http://"+ip+":"+ports+"/meteor/DailyApp/saveWorkLog.do"
         return url
     }
+    //   周报上报
+    func postWeeklyUrl() -> String{
+        let url = "http://"+ip+":"+ports+"/meteor/DailyApp/saveWeekLog.do"
+        return url
+    }
+
     
-}
+    //   村级巡查周报上报
+    func postVillageWeeklyUrl() -> String{
+         return "http://" + ip + ":" + ports+"/meteor/addYyVillageReport.do";
+    }
+
+    
+   }

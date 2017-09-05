@@ -353,6 +353,9 @@
                                             <barButtonItem image="back" id="zhS-BS-7fE">
                                                 <inset key="imageInsets" minX="0.0" minY="0.0" maxX="-15" maxY="0.0"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <action selector="goBack:" destination="Os3-bc-hhk" id="8Re-ZQ-DmD"/>
+                                                </connections>
                                             </barButtonItem>
                                             <barButtonItem title="│日志上报" style="done" id="KK5-95-aHx">
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -499,6 +502,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="weeklyPost:" destination="1qH-c1-dmB" eventType="touchUpInside" id="daY-Fw-7Nu"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sih-mH-jxL">
                                 <rect key="frame" x="124" y="173" width="42" height="21"/>
