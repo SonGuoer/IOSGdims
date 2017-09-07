@@ -450,7 +450,7 @@
                                                 <inset key="imageInsets" minX="0.0" minY="0.0" maxX="-18" maxY="0.0"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <connections>
-                                                    <action selector="dismissViewController:" destination="Os3-bc-hhk" id="G8L-al-4VV"/>
+                                                    <action selector="dismissViewController:" destination="Os3-bc-hhk" id="rCs-dp-N8j"/>
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem title="│日志上报" style="done" id="KK5-95-aHx">

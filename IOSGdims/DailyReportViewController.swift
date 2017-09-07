@@ -32,8 +32,10 @@ class DailyReportViewController: UIViewController, UITextFieldDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        time.text = getTimes()
-        // Do any additional setup after loading the view.
+        recordClerk.delegate = self
+        workType.delegate = self
+        postSituation.delegate = self
+        time.text = getTime.getTimes()
     }
 
 
@@ -50,15 +52,13 @@ class DailyReportViewController: UIViewController, UITextFieldDelegate  {
             //禁用页面
             self.view.isUserInteractionEnabled = false
         }
-        
-    
+
     }
     
     @IBAction func saveDate(_ sender: Any) {
         if isText() {
             Drop.down("数据齐全")
         }
-
     }
     func isText()-> Bool{
         let recordClerks = recordClerk.text!
@@ -87,11 +87,6 @@ class DailyReportViewController: UIViewController, UITextFieldDelegate  {
         return true
     }
     
-  
-    @IBAction func goBack(_ sender: Any) {
-         self.dismiss(animated: true, completion: nil)
-        
-    }
     func logPost(url:String,phoneNum:String)  {
        
         Drop.down("正在登录请稍后" ,duration:15.0)
@@ -135,10 +130,30 @@ class DailyReportViewController: UIViewController, UITextFieldDelegate  {
         }
         
     }
-    
+    /*
+     释放当前页面
+     */
     @IBAction func dismissViewController(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    /*
+     回收系统键盘
+     */
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    /*
+     点击空白处收起keyboard
+     */
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        recordClerk.resignFirstResponder()
+         workType.resignFirstResponder()
+         logContent.resignFirstResponder()
+         remarks.resignFirstResponder()
+         postSituation.resignFirstResponder()
+    }
 
 }
