@@ -4,7 +4,7 @@
 //
 //  Created by 包宏燕 on 2017/9/1.
 //  Copyright © 2017年 name. All rights reserved.
-//  日志上报功能页面
+//  驻守人员模块---日志上报功能页面
 
 import UIKit
 import SwiftyDrop
@@ -29,8 +29,8 @@ class DailyReportViewController: UIViewController {
     var userDefault = UserDefaultUtils()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        time.text = getTimes()
+        // Do any additional setup after loading the view.
     }
 
 
@@ -140,5 +140,10 @@ class DailyReportViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func dismissViewController(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 
 }

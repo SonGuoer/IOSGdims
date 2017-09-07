@@ -88,9 +88,13 @@ class HomepageViewController: UIViewController, UITableViewDataSource, UITableVi
      选择cell
      */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if "1" == typeNum && "1" == cells[indexPath.row].id {
-            //跳转页面
+        //跳转页面
+        if "0" == typeNum && "1" == cells[indexPath.row].id {
+            
+            
+            
+        }
+        else if "1" == typeNum && "1" == cells[indexPath.row].id {
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "DailyReportViewController") as! DailyReportViewController
             self.present(vc, animated: true, completion: nil)
