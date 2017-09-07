@@ -11,7 +11,7 @@ import SwiftyDrop
 import SwiftyJSON
 import Alamofire
 
-class DailyReportViewController: UIViewController {
+class DailyReportViewController: UIViewController, UITextFieldDelegate  {
     /*记录时间*/
     @IBOutlet weak var time: UILabel!
     /*记录人员*/
@@ -24,9 +24,12 @@ class DailyReportViewController: UIViewController {
     @IBOutlet weak var logContent: UITextView!
     /*备注*/
     @IBOutlet weak var remarks: UITextView!
-    
+    /*网络请求管理器*/
     var sessionManager:SessionManager?
+    /*share*/
     var userDefault = UserDefaultUtils()
+    var getTime = GetTimeUtils()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         time.text = getTimes()
@@ -38,26 +41,13 @@ class DailyReportViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    /*获取时间*/
-    func getTimes() -> String  {
-        
-        let date = NSDate()
-        
-        let timeFormatter = DateFormatter()
-        
-        timeFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        
-        let strNowTime = timeFormatter.string(from: date as Date) as String
-        
-        return strNowTime;
-    }
-    
 
     @IBAction func logReport(_ sender: Any) {
          let url=Api.init().postReportUrl()
         let phoneNum = userDefault.getUser(forKey: "phoneNum")!
         if isText() {
             logPost(url:url,phoneNum:phoneNum)
+            //禁用页面
             self.view.isUserInteractionEnabled = false
         }
         
@@ -97,6 +87,11 @@ class DailyReportViewController: UIViewController {
         return true
     }
     
+  
+    @IBAction func goBack(_ sender: Any) {
+         self.dismiss(animated: true, completion: nil)
+        
+    }
     func logPost(url:String,phoneNum:String)  {
        
         Drop.down("正在登录请稍后" ,duration:15.0)
